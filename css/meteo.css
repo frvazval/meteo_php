@@ -1,0 +1,264 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4CAF50, #2196F3);
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure full viewport height */
+    margin: 0; /* Remove default margin */
+    font-size: 1.1em; /* Increase base font size */
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%; /* Increased width */
+    max-width: 1200px; /* Allow more content horizontally */
+    overflow: hidden; /* Prevent unnecessary scrollbars */
+    height: auto; /* Ensure content fits without vertical scrolling */
+}
+
+.container.responsive-layout {
+    margin: auto; /* Center horizontally and vertically */
+}
+
+.info {
+    width: 250px; /* Le fijo una anchura porque al cambiar de idioma, si el texto es más ancho se separa el icono solo */
+}
+
+#icono-clima {    
+    height: 250px;
+    width: 250px;
+}
+
+.icono-prevision {
+    height: 20px;
+    width: 20px;
+}
+
+select, input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 30px; /* Make the elements elliptical */
+    border: none;
+}
+
+button {
+    padding: 15px 30px; /* Increase padding for a larger button */
+    font-size: 1.2em; /* Increase font size */
+    background-color: #2196F3; /* Match the gradient color */
+    color: white; /* Ensure text is readable */
+    border: none; /* Remove border */
+    border-radius: 30px; /* Make the button more elliptical */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s ease; /* Add hover effect */
+}
+
+button:hover {
+    background-color: #1E88E5; /* Slightly darker shade on hover */
+}
+
+.form-group {
+    display: flex;
+    justify-content: center; /* Center elements horizontally */
+    align-items: center; /* Center elements vertically */
+    gap: 10px; /* Add spacing between elements */
+}
+
+.weather-layout {
+    display: flex;
+    justify-content: space-between; /* Position elements on opposite sides */
+    align-items: center; /* Align items vertically */
+    gap: 150px; /* Add spacing between elements */
+}
+
+.weather-layout .info {
+    flex: 1; /* Allow the info section to take up available space */
+    text-align: left; /* Align text to the left */
+    font-size: 1.2em; /* Make text larger */
+}
+
+.weather-layout .icono-clima {
+    flex: 0 0 auto; /* Prevent resizing */
+    width: 250px; /* Increase width */
+    height: 250px; /* Increase height */
+}
+
+.responsive-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Responsive rules */
+@media (min-width: 768px) {
+    .responsive-layout {
+        padding: 20px;
+    }
+
+    .container {
+        padding: 30px;
+    }
+
+    .weather-layout {
+        flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+    }
+
+    .weather-layout .info {
+        max-width: 400px;
+    }
+
+    .weather-layout .icono-clima {
+        width: 150px;
+        height: 150px;
+    }
+
+    .forecast-layout {
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1024px) {
+    .responsive-layout {
+        padding: 30px;
+    }
+
+    .container {
+        padding: 40px;
+    }
+
+    .weather-layout {
+        justify-content: space-between;
+    }
+
+    .weather-layout .info {
+        max-width: 500px;
+    }
+
+    .weather-layout .icono-clima {
+        width: 200px;
+        height: 200px;
+    }
+
+    .forecast-layout {
+        justify-content: space-between;
+    }
+}
+
+.forecast-layout {
+    margin-top: 20px;   
+    flex-wrap: wrap;
+    justify-content: space-between; /* Spread forecast items horizontally */
+    gap: 20px;
+}
+
+#forecast-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.forecast-item {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    width: 120px;
+    text-align: center;
+}
+
+.forecast-item img {
+    width: 50px;
+    height: 50px;
+}
+
+.forecast-item p {
+    margin: 5px 0;
+}
+
+#fechaHora {
+    font-size: 1.2em; /* Aumenta el tamaño de la fuente */
+}
+
+#nombreCiudad {
+    font-size: 2em; /* Make the city name larger */
+    font-weight: bold; /* Emphasize the city name */
+    margin-bottom: 10px; /* Add spacing below */
+}
+
+#temperatura, #presion, #humedad, #descripcion {
+    font-size: 1.2em; /* Increase font size for better readability */
+    margin: 5px 0; /* Add spacing between lines */
+}
+
+/* Para que sea responsive */
+@media (min-width: 768px) {
+    #forecast-container {
+        justify-content: space-between;
+    }
+
+    .forecast-item {
+        width: 150px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .forecast-item {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%; /* Use full width on smaller screens */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .form-group {
+        flex-direction: column; /* Stack elements vertically */
+        gap: 15px; /* Add spacing between stacked elements */
+    }
+
+    .weather-layout {
+        flex-direction: column; /* Stack info and icon vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .weather-layout .info {
+        text-align: center; /* Center text for smaller screens */
+        font-size: 1em; /* Adjust font size */
+    }
+
+    .weather-layout .icono-clima {
+        width: 150px; /* Reduce icon size */
+        height: 150px;
+    }
+
+    .forecast-layout {
+        flex-direction: column; /* Stack forecast items vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .forecast-item {
+        width: 100%; /* Use full width for forecast items */
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 20px; /* Adjust padding for tablets */
+    }
+
+    .weather-layout .info {
+        max-width: 400px; /* Adjust max width for tablets */
+    }
+
+    .weather-layout .icono-clima {
+        width: 200px; /* Adjust icon size for tablets */
+        height: 200px;
+    }
+}
