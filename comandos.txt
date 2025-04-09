@@ -1,5 +1,5 @@
-docker build -t juego .
-docker run -d --name mijuego -p 8080:80 juego
+docker build -t meteo-php .
+docker run -d --name inf-meteo-php -p 8080:80 meteo-php
 docker login -u fvazquez106
-docker tag juego:latest fvazquez106/juego_ppt:1
-docker push fvazquez106/juego_ppt:1
+docker tag meteo-php:8.2-cli fvazquez106/inf-meteo-php:1
+docker push fvazquez106/inf-meteo-php:1
