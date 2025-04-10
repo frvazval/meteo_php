@@ -1,10 +1,4 @@
 
-
-
-$ docker build -t my-php-app .
-$ docker run -it --rm --name my-running-app my-php-app
-
-
 docker build -t meteo-php .
 docker run -it --rm --name inf-meteo-php meteo-php
 docker run -d --name inf-meteo-php:1 -p 8080:80 meteo-php
