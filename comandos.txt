@@ -1,7 +1,7 @@
 
 docker build -t meteo-php .
 docker run -it --rm --name inf-meteo-php meteo-php
-docker run -d --name inf-meteo-php:1 -p 8080:80 meteo-php
+docker run -d --name inf-meteo-php -p 8080:80 meteo-php
 docker login -u fvazquez106
 docker tag meteo-php:latest fvazquez106/inf-meteo-php:1
 docker push fvazquez106/inf-meteo-php:1
